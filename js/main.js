@@ -1,45 +1,56 @@
 // ── PROJECT DATA ──────────────────────────────────────────────
 const projects = [
     {
+        icon: '📈',
+        title: 'Business Analytics Dashboard',
+        description: 'An interactive data visualization dashboard integrating Power BI and RScript to track, analyze, and present key business performance metrics.',
+        tags: ['Power BI', 'RScript', 'Data Analytics'],
+        status: 'Coming Soon',
+        year: '2025',
+        link: null, /* ← UPDATED THIS LINE */
+        modelCount: 1
+    },
+    {
+        icon: '🏥',
+        title: 'Pfizer: Value Chain & BMC',
+        description: 'A comprehensive strategic analysis of Pfizer using Porter\'s Value Chain Analysis and the Business Model Canvas framework.',
+        tags: ['Business Model Canvas', 'Porter\'s Value Chain Analysis'],
+        status: 'Completed',
+        year: '2025',
+        link: 'HTML/BMC.html',
+        modelCount: 0
+    },
+    {
         icon: '🎯',
         title: 'Product Idea Market Study',
         description: 'An in-depth market research study evaluating the feasibility, target demographic, and competitive landscape for a new product concept.',
-        tags: ['Market Research', 'Strategy', 'Consumer Behavior'],
+        tags: ['Market Research', 'Business Strategy', 'Consumer Behavior'],
         status: 'Completed',
         year: '2024',
-        link: 'product-study.html',
+        link: 'HTML/product-study.html',
         modelCount: 0
     },
     {
         icon: '📱',
         title: 'FinTech Banks Report',
         description: 'A detailed research report analyzing the rise of FinTech banks, their operational models, and their disruption of the traditional banking sector.',
-        tags: ['Research', 'FinTech', 'Business Strategy'],
+        tags: ['Market Research', 'FinTech', 'Business Strategy'],
         status: 'Completed',
         year: '2023',
-        link: 'fintech-report.html',
+        link: 'HTML/fintech-report.html',
         modelCount: 0
     },
     {
         icon: '📖',
-        title: 'Academic Book Review',
+        title: 'Book Review',
         description: 'A comprehensive book review and critical analysis completed during my B.Com studies, exploring foundational business management principles.',
-        tags: ['Academic', 'B.Com', 'Critical Analysis'],
+        tags: ['Critical Analysis','Report Writing'],
         status: 'Completed',
         year: '2023',
-        link: 'book-review.html',
+        link: 'HTML/book-review.html',
         modelCount: 0
     },
-    {
-        icon: '📈',
-        title: 'Business Analytics Dashboard',
-        description: 'An interactive data visualization dashboard integrating Power BI and RScript to track, analyze, and present key business performance metrics.',
-        tags: ['Power BI', 'RScript', 'Data Analytics'],
-        status: 'Completed',
-        year: '2026',
-        link: null, /* ← UPDATED THIS LINE */
-        modelCount: 1
-    },
+
 ]
 
 // ── INJECT PROJECT CARDS ──────────────────────────────────────
