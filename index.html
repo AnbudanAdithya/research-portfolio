@@ -3,30 +3,60 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Business & Analytics Portfolio</title>
+    <title>S Adithya | Research &amp; Analytics Portfolio</title>
+    <meta name="description" content="Market research, business strategy reports, and analytics projects by S Adithya.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="S Adithya">
+    <meta name="google-site-verification" content="243Jxfwo9YlJnOdazw-0hytEyVnXx2_7Pl5U5anUTYk" />
+    <link rel="canonical" href="https://sa05-projects.vercel.app/">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="S Adithya | Research &amp; Analytics Portfolio">
+    <meta property="og:description" content="Market research, business strategy reports, and analytics projects by S Adithya.">
+    <meta property="og:url" content="https://sa05-projects.vercel.app/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://sa05-projects.vercel.app/images/favicon.svg">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="S Adithya | Research &amp; Analytics Portfolio">
+    <meta name="twitter:description" content="Market research, business strategy reports, and analytics projects by S Adithya.">
+
     <link rel="icon" href="images/favicon.svg" type="image/svg+xml"/>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="css/style.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HNVCH9K0YQ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HNVCH9K0YQ');
+    </script>
 </head>
 <body>
 
+    <!-- ── NAVIGATION ──────────────────────────────────────── -->
     <nav id="navbar">
         <div class="nav-container">
-            <div class="nav-logo">Portfolio</div>
+            <div class="nav-logo">S Adithya | Research & Analytics Portfolio</div>
             <ul class="nav-links">
                 <li><a href="https://adithya05.vercel.app/index.html">Home</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <button class="hamburger" id="hamburger" aria-label="Open menu" type="button">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </nav>
 
+    <!-- ── HERO ─────────────────────────────────────────────── -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <p class="hero-tag">Strategy & Research</p>
-            <h1>Strategy, Research & <br/> <span class="highlight">Analytics</span></h1>
+            <p class="hero-tag">Strategy &amp; Research</p>
+            <h1>Strategy, Research &amp; <br/> <span class="highlight">Analytics</span></h1>
             <p class="hero-sub">A collection of my work spanning market studies, business analytics dashboards, and academic reports.</p>
             <div class="hero-buttons">
                 <a href="#projects" class="btn-primary">View Projects</a>
@@ -49,16 +79,17 @@
         </div>
     </section>
 
+    <!-- ── PROJECTS ──────────────────────────────────────────── -->
     <section id="projects" class="projects">
         <div class="section-header">
             <p class="section-tag">Portfolio</p>
             <h2>Featured Work</h2>
             <p class="section-sub">Showcasing data visualization, market strategy, and deep-dive industry research.</p>
         </div>
-        <div class="projects-grid" id="projects-grid">
-            </div>
+        <div class="projects-grid" id="projects-grid"></div>
     </section>
 
+    <!-- ── ABOUT ─────────────────────────────────────────────── -->
     <section id="about" class="about">
         <div class="about-content">
             <p class="section-tag">About Me</p>
@@ -66,7 +97,7 @@
             <p>My academic journey from a B.Com to an MBA has allowed me to explore various facets of the business world. This portfolio is a space to showcase the diverse projects I've worked on outside of pure financial modeling. From visualizing complex datasets using Power BI and R, to conducting on-the-ground market studies and evaluating emerging FinTech trends, I enjoy breaking down information to find clear, actionable takeaways.</p>
             <div class="skills-grid">
                 <div class="skill-tag">Business Analytics</div>
-                <div class="skill-tag">Power BI & RScript</div>
+                <div class="skill-tag">Power BI &amp; RScript</div>
                 <div class="skill-tag">Market Research</div>
                 <div class="skill-tag">Product Strategy</div>
                 <div class="skill-tag">FinTech Trends</div>
@@ -75,6 +106,7 @@
         </div>
     </section>
 
+    <!-- ── CONTACT ───────────────────────────────────────────── -->
     <section id="contact" class="contact">
         <div class="section-header">
             <p class="section-tag">Get In Touch</p>
@@ -82,16 +114,18 @@
             <p class="section-sub">Always open to discussing analytics, business strategy, or new research ideas.</p>
         </div>
         <ul class="social-links">
-            <li><a href="mailto:adithyas0503@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a></li>
-            <li><a href="https://www.linkedin.com/in/s-adithya-918009294/" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a></li>
-            <li><a href="https://github.com/AnbudanAdithya" target="_blank" class="social-icon"><i class="fab fa-github"></i></a></li>
+            <li><a href="mailto:adithyas0503@gmail.com" class="social-icon" aria-label="Send email to S Adithya"><i class="fas fa-envelope"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/s-adithya-918009294/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn profile"><i class="fab fa-linkedin-in"></i></a></li>
+            <li><a href="https://github.com/AnbudanAdithya" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub profile"><i class="fab fa-github"></i></a></li>
         </ul>
     </section>
 
+    <!-- ── FOOTER ────────────────────────────────────────────── -->
     <footer>
-        <p>Built with 💛 | Business Portfolio <span></span>© 2026</p>
+        <p>Built with 💛 | Business Portfolio © <span id="footer-year"></span></p>
     </footer>
 
+    <button id="scroll-top" aria-label="Back to top" type="button">↑</button>
     <script src="js/main.js"></script>
 
 </body>

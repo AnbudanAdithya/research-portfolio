@@ -84,6 +84,8 @@ body {
 
 .nav-links a:hover { color: var(--accent); }
 
+.hamburger { display: none; }
+
 /* ── HERO ─────────────────────────────────────────────────── */
 .hero {
     min-height: 100vh;
@@ -208,6 +210,11 @@ body {
     transform: translateY(-2px);
 }
 
+.btn-sm {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+}
+
 /* ── SECTIONS ────────────────────────────────────────────── */
 section { padding: 100px 2rem; }
 
@@ -251,15 +258,14 @@ section { padding: 100px 2rem; }
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    /*grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));*/
     gap: 1.5rem;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .project-card {
-    flex: 1 1 320px; /* Allows the card to grow, shrink, with a base of 320px */
-    max-width: 380px; /* Prevents a single card from stretching out too wide */
+    flex: 1 1 320px;
+    max-width: 380px;
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: var(--radius);
@@ -280,7 +286,7 @@ section { padding: 100px 2rem; }
     transition: var(--transition);
 }
 
-.project-card:hover { 
+.project-card:hover {
     border-color: var(--accent);
     transform: translateY(-6px);
 }
@@ -332,7 +338,7 @@ section { padding: 100px 2rem; }
     padding-top: 1rem;
 }
 
-/* ── CALCULATOR ──────────────────────────────────────────── */
+/* ── CALCULATOR / REPORT SECTION ─────────────────────────── */
 .calculator-section { background: var(--bg-primary); }
 
 .calculator-vertical {
@@ -343,7 +349,6 @@ section { padding: 100px 2rem; }
     gap: 2rem;
 }
 
-/* ── INPUT PANEL (top) ───────────────────────────────────── */
 .calc-inputs-top {
     background: var(--bg-card);
     border: 1px solid var(--border);
@@ -358,201 +363,68 @@ section { padding: 100px 2rem; }
     margin-bottom: 1.5rem;
 }
 
-.inputs-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-}
+/* ── PDF REPORT PAGES ────────────────────────────────────── */
+.report-section { padding-top: 0; }
 
-.input-col { display: flex; flex-direction: column; gap: 0; }
+.report-container { max-width: 1000px; margin: 0 auto; }
 
-.input-group {
-    margin-bottom: 1.1rem;
-}
+.report-card { padding: 1rem; }
 
-.input-group label {
-    display: block;
-    font-size: 0.82rem;
-    font-weight: 500;
-    color: var(--text-secondary);
-    margin-bottom: 6px;
-}
-
-.input-group input {
-    width: 100%;
-    background: var(--bg-secondary);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 10px 14px;
-    color: var(--text-primary);
-    font-size: 0.9rem;
-    font-family: var(--font);
-    transition: var(--transition);
-    outline: none;
-}
-
-.input-group input:focus {
-    border-color: var(--accent);
-    box-shadow: 0 0 0 3px rgba(240, 192, 64, 0.1);
-}
-
-.calc-actions {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1.5rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--border);
-    justify-content: center;
-}
-
-.calc-actions button {
-    min-width: 220px;
-}
-
-/* ── RESULTS PANEL (full width) ──────────────────────────── */
-.calc-results-full {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 2rem;
-}
-
-.result-metric {
-    background: var(--bg-secondary);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 1.2rem 1.5rem;
-    margin-bottom: 1rem;
+.report-card-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: var(--transition);
+    margin-bottom: 1rem;
+    padding: 0 1rem;
 }
 
-.result-metric:hover { border-color: var(--accent); }
+.report-card-header h3 { margin: 0; }
 
-.result-metric .label {
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-}
-
-.result-metric .value {
-    font-size: 1.15rem;
-    font-weight: 700;
-    color: var(--accent);
-}
-
-.result-metric .value.positive { color: var(--success); }
-.result-metric .value.negative { color: var(--danger); }
-
-/* ── CASH FLOW TABLE ─────────────────────────────────────── */
-.cf-table {
+.pdf-viewer {
     width: 100%;
-    border-collapse: collapse;
-    font-size: 0.85rem;
-    margin-top: 1.5rem;
-}
-
-.cf-table th {
-    background: var(--bg-primary);
-    color: var(--text-secondary);
-    padding: 12px 16px;
-    text-align: right;
-    font-weight: 600;
-    border-bottom: 1px solid var(--border);
-}
-
-.cf-table th:first-child { text-align: left; }
-
-.cf-table td {
-    padding: 12px 16px;
-    text-align: right;
-    border-bottom: 1px solid var(--border);
-    color: var(--text-primary);
-}
-
-.cf-table td:first-child { text-align: left; font-weight: 500; }
-.cf-table tr:hover td { background: rgba(240,192,64,0.04); }
-.cf-table .positive { color: var(--success); font-weight: 600; }
-.cf-table .negative { color: var(--danger);  font-weight: 600; }
-
-/* ── CHART ───────────────────────────────────────────────── */
-.chart-wrapper {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 2rem;
-}
-
-/* ── INPUT TABLE (uneven mode) ───────────────────────────── */
-.input-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.85rem;
-}
-
-.input-table th {
-    background: var(--bg-primary);
-    color: var(--text-secondary);
-    padding: 10px 12px;
-    text-align: center;
-    font-weight: 600;
-    border-bottom: 1px solid var(--border);
-}
-
-.input-table td {
-    padding: 6px 8px;
-    border-bottom: 1px solid var(--border);
-    text-align: center;
-}
-
-.table-input {
-    width: 100%;
-    background: var(--bg-secondary);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 8px 10px;
-    color: var(--text-primary);
-    font-size: 0.85rem;
-    font-family: var(--font);
-    outline: none;
-    text-align: right;
-    transition: var(--transition);
-}
-
-.table-input:focus {
-    border-color: var(--accent);
-    box-shadow: 0 0 0 2px rgba(240,192,64,0.1);
-}
-
-/* ── TOGGLE ──────────────────────────────────────────────── */
-.toggle-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    margin-top: 4px;
-}
-
-.toggle-option {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    cursor: pointer;
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    padding: 8px 12px;
-    border: 1px solid var(--border);
+    height: 75vh;
     border-radius: 8px;
-    transition: var(--transition);
+    overflow: hidden;
+    border: 1px solid var(--border);
+    position: relative;
 }
 
-.toggle-option:hover { border-color: var(--accent); color: var(--text-primary); }
-.toggle-option input[type="radio"] { accent-color: var(--accent); }
+.pdf-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    pointer-events: none;
+}
 
-/* ── RESPONSIVE ──────────────────────────────────────────── */
-@media (max-width: 768px) {
-    .inputs-grid { grid-template-columns: 1fr; }
-    .calc-actions { flex-direction: column; }
+.pdf-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    position: relative;
+    z-index: 1;
+}
+
+/* ── MODEL PAGE HERO ─────────────────────────────────────── */
+.model-hero {
+    padding: 120px 2rem 60px;
+    text-align: center;
+    background: radial-gradient(ellipse at 50% 40%, #1a1a2e 0%, var(--bg-primary) 70%);
+}
+
+.model-hero-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.model-hero h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    letter-spacing: -1.5px;
+    margin-bottom: 1rem;
+    line-height: 1.1;
 }
 
 /* ── ABOUT ───────────────────────────────────────────────── */
@@ -629,12 +501,6 @@ section { padding: 100px 2rem; }
     box-shadow: 0 5px 15px rgba(240, 192, 64, 0.3);
 }
 
-.contact-card:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-    transform: translateY(-4px);
-}
-
 /* ── FOOTER ──────────────────────────────────────────────── */
 footer {
     text-align: center;
@@ -644,115 +510,80 @@ footer {
     border-top: 1px solid var(--border);
 }
 
-/* ── RESPONSIVE ──────────────────────────────────────────── */
+footer a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+footer a:hover { text-decoration: underline; }
+
+/* ── SCROLL TO TOP ───────────────────────────────────────── */
+#scroll-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: var(--accent);
+    color: #000;
+    border: none;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    box-shadow: 0 4px 15px rgba(240,192,64,0.3);
+    transition: var(--transition);
+}
+
+#scroll-top:hover { background: var(--accent-hover); }
+
+/* ── FOCUS STYLES ────────────────────────────────────────── */
+a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+/* ── PRINT STYLES ────────────────────────────────────────── */
+@media print {
+    #navbar, footer, #scroll-top { display: none; }
+    body { background: white; color: black; }
+    .highlight { color: #b8860b; }
+}
+
+/* ── RESPONSIVE (mobile) ─────────────────────────────────── */
 @media (max-width: 768px) {
-    .nav-links { display: none; }
-    .calculator-wrapper { grid-template-columns: 1fr; }
+    /* Navigation */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 64px; left: 0; right: 0;
+        background: rgba(10, 10, 15, 0.97);
+        padding: 1.5rem 2rem;
+        border-bottom: 1px solid var(--border);
+        gap: 1.2rem;
+    }
+    .nav-links.open { display: flex; }
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        background: none;
+        border: none;
+        padding: 4px;
+    }
+    .hamburger span {
+        width: 25px; height: 2px;
+        background: var(--accent);
+        border-radius: 2px;
+    }
+
+    /* Hero */
     .hero-stats { gap: 1rem; }
     .stat-card { padding: 1rem 1.5rem; }
-}
-
-/* ── INPUT TABLE ─────────────────────────────────────────── */
-.input-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.82rem;
-    margin-bottom: 1rem;
-}
-
-.input-table th {
-    background: var(--bg-primary);
-    color: var(--text-secondary);
-    padding: 10px 8px;
-    text-align: center;
-    font-weight: 600;
-    border-bottom: 1px solid var(--border);
-    font-size: 0.78rem;
-}
-
-.input-table td {
-    padding: 6px 4px;
-    border-bottom: 1px solid var(--border);
-    text-align: center;
-}
-
-.table-input {
-    width: 100%;
-    background: var(--bg-secondary);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 7px 8px;
-    color: var(--text-primary);
-    font-size: 0.82rem;
-    font-family: var(--font);
-    outline: none;
-    text-align: right;
-    transition: var(--transition);
-}
-
-.table-input:focus {
-    border-color: var(--accent);
-    box-shadow: 0 0 0 2px rgba(240,192,64,0.1);
-}
-
-/* ── INVESTMENT TOGGLE ───────────────────────────────────── */
-.toggle-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    margin-top: 4px;
-}
-
-.toggle-option {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    cursor: pointer;
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    padding: 8px 12px;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    transition: var(--transition);
-}
-
-.toggle-option:hover { border-color: var(--accent); color: var(--text-primary); }
-
-.toggle-option input[type="radio"] { accent-color: var(--accent); }
-
-/* ── MODEL PAGE HERO ─────────────────────────────────────── */
-.model-hero {
-    padding: 120px 2rem 60px;
-    text-align: center;
-    background: radial-gradient(ellipse at 50% 40%, #1a1a2e 0%, var(--bg-primary) 70%);
-}
-
-.model-hero-content {
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-.model-hero h1 {
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 700;
-    letter-spacing: -1.5px;
-    margin-bottom: 1rem;
-    line-height: 1.1;
-}
-
-.contact-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    color: var(--text-primary);
-    text-decoration: none;
-    padding: 1.2rem 2.5rem;
-    border-radius: var(--radius);
-    font-weight: 600;
-    font-size: 1rem;
-    transition: var(--transition);
-    
-    /* Add these 3 lines to align the new logos perfectly */
-    display: flex;
-    align-items: center;
-    gap: 12px;
 }

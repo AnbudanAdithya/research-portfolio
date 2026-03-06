@@ -7,7 +7,7 @@ const projects = [
         tags: ['Power BI', 'RScript', 'Data Analytics'],
         status: 'Coming Soon',
         year: '2025',
-        link: null, /* ← UPDATED THIS LINE */
+        link: null,
         modelCount: 1
     },
     {
@@ -44,18 +44,18 @@ const projects = [
         icon: '📖',
         title: 'Book Review',
         description: 'A comprehensive book review and critical analysis completed during my B.Com studies, exploring foundational business management principles.',
-        tags: ['Critical Analysis','Report Writing'],
+        tags: ['Critical Analysis', 'Report Writing'],
         status: 'Completed',
         year: '2023',
         link: 'HTML/book-review.html',
         modelCount: 0
     },
-
 ]
 
 // ── INJECT PROJECT CARDS ──────────────────────────────────────
 function renderProjects() {
     const grid = document.getElementById('projects-grid')
+    if (!grid) return
     grid.innerHTML = ''
 
     projects.forEach(p => {
@@ -69,7 +69,7 @@ function renderProjects() {
                    View Details →
                </a>`
             : `<span style="font-size:0.82rem; color:var(--text-muted); font-style:italic;">
-                   Report Available on Request
+                   Coming Soon
                </span>`
 
         grid.innerHTML += `
@@ -93,6 +93,7 @@ function renderProjects() {
 // ── ANIMATE STATS COUNTER ─────────────────────────────────────
 function animateCounter(id, target, duration = 1500) {
     const el = document.getElementById(id)
+    if (!el) return
     const step = target / (duration / 16)
     let current = 0
 
@@ -141,15 +142,39 @@ function initScrollSpy() {
 // ── INIT ──────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
     renderProjects()
-    
-    const totalProjects = projects.length;
-    const totalModels = projects.reduce((sum, project) => sum + (project.modelCount || 0), 0);
-    const uniqueToolsCount = new Set(projects.flatMap(p => p.tags)).size;
+
+    const totalProjects   = projects.length
+    const totalModels     = projects.reduce((sum, p) => sum + (p.modelCount || 0), 0)
+    const uniqueToolsCount = new Set(projects.flatMap(p => p.tags)).size
 
     animateCounter('stat-projects', totalProjects)
-    animateCounter('stat-models', totalModels)
-    animateCounter('stat-tools', uniqueToolsCount)
-    
+    animateCounter('stat-models',   totalModels)
+    animateCounter('stat-tools',    uniqueToolsCount)
+
     initNavbar()
-    initScrollSpy()
-})
+    if (document.querySelectorAll('section').length > 1) {
+        initScrollSpy()
+    }
+
+    // ── HAMBURGER ─────────────────────────────────────────────
+    const hamburger = document.getElementById('hamburger')
+    const navLinks  = document.querySelector('.nav-links')
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', () => navLinks.classList.toggle('open'))
+    }
+
+    // ── SCROLL TO TOP ─────────────────────────────────────────
+    const scrollBtn = document.getElementById('scroll-top')
+    if (scrollBtn) {
+        window.addEventListener('scroll', () => {
+            scrollBtn.style.display = window.scrollY > 300 ? 'flex' : 'none'
+        })
+        scrollBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' })
+        })
+    }
+
+    // ── FOOTER YEAR ───────────────────────────────────────────
+    const footerYear = document.getElementById('footer-year')
+    if (footerYear) footerYear.textContent = new Date().getFullYear()
+})  

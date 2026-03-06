@@ -3,10 +3,35 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>FinTech Banks Report</title>
+    <title>FinTech Banks Report | S Adithya</title>
+    <meta name="description" content="Research report analysing the rise of FinTech banks, their operational models, and disruption of traditional banking, by S Adithya.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="S Adithya">
+    <meta name="google-site-verification" content="243Jxfwo9YlJnOdazw-0hytEyVnXx2_7Pl5U5anUTYk" />
+    <link rel="canonical" href="https://sa05-projects.vercel.app/HTML/fintech-report.html">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="FinTech Banks Report | S Adithya">
+    <meta property="og:description" content="Research report analysing FinTech banks and their disruption of traditional banking.">
+    <meta property="og:url" content="https://sa05-projects.vercel.app/HTML/fintech-report.html">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://sa05-projects.vercel.app/images/favicon.svg">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="FinTech Banks Report | S Adithya">
+    <meta name="twitter:description" content="Research report on FinTech banks and the disruption of traditional banking by S Adithya.">
+
     <link rel="icon" href="../images/favicon.svg" type="image/svg+xml"/>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="../css/style.css"/>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HNVCH9K0YQ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HNVCH9K0YQ');
+    </script>
 </head>
 <body>
 
@@ -27,25 +52,25 @@
         </div>
     </section>
 
-    <section class="calculator-section" style="padding-top: 0;">
-        <div class="calculator-vertical" style="max-width: 1000px; margin: 0 auto;">
-            
-            <div class="calc-inputs-top" style="padding: 1rem;">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; padding: 0 1rem;">
-                    <h3 style="margin: 0;">📄 Research Report</h3>
-                    <a href="../assets/PDF/FinTech_Banks.pdf" target="_blank" class="btn-secondary" style="padding: 8px 16px; font-size: 0.85rem;">
+    <section class="calculator-section report-section">
+        <div class="calculator-vertical report-container">
+
+            <div class="calc-inputs-top report-card">
+                <div class="report-card-header">
+                    <h3>📄 Research Report</h3>
+                    <a href="../assets/PDF/FinTech_Banks.pdf" target="_blank" rel="noopener noreferrer" class="btn-secondary btn-sm">
                         Open in New Tab ↗
                     </a>
                 </div>
 
-                <div style="width: 100%; height: 75vh; border-radius: 8px; overflow: hidden; border: 1px solid var(--border);">
-                    <iframe 
-                        src="../assets/PDF/FinTech_Banks.pdf" 
-                        width="100%" 
-                        height="100%" 
-                        style="border: none;">
-                        <p>Your browser does not support PDFs. 
-                        <a href="../assets/PDF/FinTech_Banks.pdf" style="color: var(--accent);">Download the PDF</a>.</p>
+                <div class="pdf-viewer">
+                    <p class="pdf-loading">Loading PDF...</p>
+                    <iframe
+                        src="../assets/PDF/FinTech_Banks.pdf"
+                        class="pdf-iframe"
+                        title="FinTech Banks Industry Research Report">
+                        <p>Your browser does not support PDFs.
+                        <a href="../assets/PDF/FinTech_Banks.pdf">Download the PDF</a>.</p>
                     </iframe>
                 </div>
             </div>
@@ -54,19 +79,10 @@
     </section>
 
     <footer>
-        <p>Built with 💛 | Business Portfolio © 2026 | <a href="../index.html" style="color:var(--accent); text-decoration:none;">← Back to Portfolio</a></p>
+        <p>Built with 💛 | Business Portfolio © <span id="footer-year"></span> | <a href="../index.html">← Back to Portfolio</a></p>
     </footer>
 
-    <script>
-        // Simple navbar shadow effect for the sub-page
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.style.boxShadow = '0 4px 30px rgba(0,0,0,0.4)';
-            } else {
-                navbar.style.boxShadow = 'none';
-            }
-        });
-    </script>
+    <button id="scroll-top" aria-label="Back to top" type="button">↑</button>
+    <script src="../js/main.js"></script>
 </body>
 </html>
